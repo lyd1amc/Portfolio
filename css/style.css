@@ -1,0 +1,225 @@
+/* ===== CORES (variáveis) =====
+   Mudando aqui, muda o site inteiro. O modo escuro troca só alguns valores. */
+:root {
+  --fundo: #fdf9ec;   /* creme */
+  --texto: #2b3322;   /* verde quase preto */
+  --verde: #3d4a30;   /* verde musgo */
+  --caixa: #ffffff;   /* caixas brancas */
+  --realce: #f2b84b;  /* cor do foco do teclado */
+}
+.escuro {
+  --fundo: #151a11;
+  --texto: #f3efdf;
+  --verde: #2a3321;
+  --caixa: #f3efdf;
+}
+
+/* ===== BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+p { margin-bottom: 1rem; max-width: 60ch; }
+
+/* Foco visível para quem usa o teclado */
+:focus-visible { outline: 3px solid var(--realce); outline-offset: 3px; }
+
+/* Texto só para leitores de tela */
+.so-leitor {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.pular {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--realce); color: #2b3322;
+  padding: .6rem 1rem; font-weight: 800; z-index: 20;
+}
+.pular:focus { top: 1rem; }
+
+/* Letra de assinatura (estilo caligrafia) */
+.assinatura {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 2.6rem; line-height: 1.1; margin-bottom: 1rem;
+}
+
+/* ===== CABEÇALHO ===== */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: .75rem;
+  padding: .6rem 1.25rem;
+  background: var(--fundo);
+  border-bottom: 4px solid var(--verde);
+}
+.logo {
+  margin-right: auto; /* empurra o resto para a direita */
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 2.3rem; line-height: 1;
+  color: var(--texto); text-decoration: none;
+}
+
+.tema, .hamburguer {
+  width: 44px; height: 44px;
+  background: transparent; color: var(--texto);
+  border: 3px solid var(--texto);
+  cursor: pointer; font-size: 1.2rem;
+}
+
+/* Hambúrguer: três tracinhos */
+.hamburguer {
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 5px;
+}
+.hamburguer span { width: 22px; height: 3px; background: currentColor; }
+
+/* Menu no celular: escondido até clicar no hambúrguer */
+.menu {
+  display: none; list-style: none;
+  position: absolute; left: 0; right: 0; top: 100%;
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+  background: var(--fundo);
+  border-bottom: 4px solid var(--verde);
+}
+.menu.aberto { display: flex; }
+.menu a {
+  display: block; padding: .6rem .25rem;
+  color: var(--texto); font-weight: 600; text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover { border-bottom-color: currentColor; }
+
+/* ===== SEÇÕES ===== */
+.secao { padding: 4rem 1.25rem; }
+.verde { background: var(--verde); color: #fdf9ec; }
+.conteudo { max-width: 1100px; margin: 0 auto; }
+
+.titulo-secao {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 800; line-height: 1.1; letter-spacing: -.01em;
+}
+.subtitulo { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; }
+
+/* Duas colunas com Grid (vira uma coluna no celular) */
+.duas-colunas { display: grid; gap: 2.5rem; }
+
+/* ===== TÍTULO GRANDE (solido + contorno repetido) ===== */
+.titulo-grande {
+  display: flex; flex-direction: column;
+  font-size: clamp(2.2rem, 10vw, 5.2rem);
+  font-weight: 800; line-height: 1; letter-spacing: -.02em;
+  margin-bottom: 1rem;
+}
+.titulo-grande.pequeno { font-size: clamp(2rem, 9vw, 4.2rem); }
+.vazado {
+  color: transparent;
+  -webkit-text-stroke: 2px #fdf9ec;
+}
+
+/* ===== INÍCIO ===== */
+.hero-grade { display: grid; gap: 2.5rem; align-items: center; }
+.hero-foto { margin: 0; }
+.hero-foto img {
+  display: block; width: 100%;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: 55% center;
+}
+.legenda {
+  position: relative; width: 85%; margin-top: -2.5rem;
+  padding: .8rem 1rem;
+  background: var(--caixa); color: #2b3322;
+  font-size: .9rem; font-weight: 600; line-height: 1.4;
+}
+#saudacao { font-size: 3rem; }
+.apresentacao { font-size: 1.05rem; }
+
+.botao {
+  display: inline-block; margin: .5rem 0 1.5rem;
+  padding: .8rem 1.8rem;
+  background: #fdf9ec; color: #2b3322;
+  border: 3px solid #fdf9ec;
+  font-weight: 800; text-decoration: none;
+}
+.botao:hover { background: transparent; color: #fdf9ec; }
+
+/* Caixa branca com os contatos rápidos */
+.caixa-contato {
+  background: var(--caixa); color: #2b3322;
+  padding: 1rem 1.25rem; font-size: .9rem; max-width: 380px;
+  word-break: break-word;
+}
+.caixa-contato a, .caixa-grande a { color: #2b3322; font-weight: 600; }
+
+/* ===== LISTAS E CARTÕES ===== */
+.lista-barras { list-style: none; display: grid; gap: .75rem; }
+.lista-barras li {
+  padding: .8rem 1rem;
+  background: var(--caixa); color: #2b3322;
+  border: 3px solid var(--verde);
+  font-weight: 600; font-size: .95rem;
+}
+
+/* Grid que se ajusta sozinho ao tamanho da tela */
+.grade-cartoes {
+  list-style: none; margin-top: 1.5rem;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.cartao {
+  background: var(--caixa); color: #2b3322;
+  padding: 1.5rem;
+  display: flex; flex-direction: column;
+}
+.cartao.borda { border: 3px solid var(--verde); }
+.cartao h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: .6rem; }
+.cartao p { font-size: .95rem; }
+.link {
+  margin-top: auto; /* mantém o link sempre no fim do cartão */
+  align-self: flex-start;
+  color: #3d4a30; font-weight: 800;
+}
+
+/* ===== CONTATO ===== */
+.contato-grade { display: grid; gap: 2rem; align-items: center; }
+.caixa-grande { background: var(--caixa); color: #2b3322; padding: 1.5rem; }
+.escuro-texto { margin-bottom: .5rem; }
+.lista-contato { list-style: none; word-break: break-word; }
+.lista-contato li { margin-bottom: .5rem; }
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  justify-content: space-between; align-items: center;
+  padding: 1.5rem 1.25rem;
+  border-top: 4px solid var(--verde);
+}
+.rodape p { margin: 0; }
+.rodape a { color: var(--texto); font-weight: 600; }
+
+/* ===== TELAS MAIORES (a partir de 820px) ===== */
+@media (min-width: 820px) {
+  .hamburguer { display: none; }
+  .tema { order: 2; }
+
+  /* Menu vira uma linha no topo */
+  .menu {
+    display: flex; flex-direction: row; gap: 1rem;
+    position: static; padding: 0; border: 0; background: none;
+  }
+
+  .secao { padding: 5rem 2rem; }
+  .duas-colunas { grid-template-columns: 1.2fr 1fr; }
+  .hero-grade { grid-template-columns: .9fr 1.1fr; gap: 4rem; }
+  .contato-grade { grid-template-columns: 1fr 1fr; }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lydia Fernanda | Portfólio de Desenvolvedora</title>
+  <meta name="description" content="Portfólio de Lydia Fernanda, estudante de tecnologia com foco em back-end, front-end e banco de dados.">
+
+  <!-- Fontes: Montserrat (títulos e textos) e Mrs Saint Delafield (assinatura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Atalho para quem navega só pelo teclado -->
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===== CABEÇALHO: logo + menu ===== -->
+  <header class="topo">
+    <a class="logo" href="#inicio" aria-label="Lydia Fernanda, ir para o início">Lydia Fernanda</a>
+
+    <!-- Botão do modo claro/escuro -->
+    <button class="tema" id="btn-tema" type="button" aria-label="Alternar modo escuro" aria-pressed="false">☾</button>
+
+    <nav aria-label="Menu principal">
+      <!-- Botão hambúrguer (aparece só no celular) -->
+      <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===== INÍCIO ===== -->
+    <section class="secao verde hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="conteudo hero-grade">
+
+        <!-- Foto de perfil + frase de apresentação -->
+        <figure class="hero-foto">
+          <img src="img/lydia.jpg" width="1000" height="750"
+               alt="Foto de Lydia Fernanda, de jaleco branco e cabelos longos e escuros">
+          <figcaption class="legenda">Olá! Eu gosto de criar sistemas que funcionam por dentro e por fora.</figcaption>
+        </figure>
+
+        <div class="hero-texto">
+          <!-- O título aparece repetido só pelo visual; o leitor de tela lê apenas uma vez -->
+          <h1 class="titulo-grande" id="titulo-inicio">
+            <span class="so-leitor">Portfólio de Lydia Fernanda</span>
+            <span aria-hidden="true">PORTFÓLIO</span>
+            <span class="vazado" aria-hidden="true">PORTFÓLIO</span>
+            <span class="vazado" aria-hidden="true">PORTFÓLIO</span>
+          </h1>
+
+          <!-- A saudação muda conforme a hora (veja js/script.js) -->
+          <p class="assinatura" id="saudacao">Olá!</p>
+          <p class="apresentacao">
+            Sou a <strong>Lydia</strong>, estudante de tecnologia em busca de uma oportunidade de estágio.
+            Trabalho com back-end, front-end e banco de dados.
+          </p>
+          <a class="botao" href="#projetos">Ver projetos</a>
+
+          <p class="caixa-contato">
+            GitHub: <a href="https://github.com/lyd1amc" target="_blank" rel="noopener noreferrer">@lyd1amc</a><br>
+            E-mail: <a href="mailto:lydiafernandinha@gmail.com">lydiafernandinha@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE MIM ===== -->
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="conteudo duas-colunas">
+        <div>
+          <h2 class="titulo-secao" id="titulo-sobre">SOBRE MIM</h2>
+          <p class="assinatura">quem eu sou</p>
+          <p>
+            Sou Lydia Fernanda e gosto de entender como um sistema funciona por inteiro:
+            a tela que a pessoa usa, a lógica que roda por trás e o banco de dados que guarda tudo.
+            Durante o curso, coloquei isso em prática criando projetos do zero e aprendendo com cada erro.
+          </p>
+          <p>
+            Agora quero levar essa vontade de aprender para o mercado, trabalhando em equipe e crescendo junto com ela.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="subtitulo">Meus objetivos</h3>
+          <ul class="lista-barras">
+            <li>Conseguir um estágio na área de tecnologia</li>
+            <li>Aprender com times de desenvolvimento</li>
+            <li>Evoluir em back-end e front-end</li>
+            <li>Criar soluções com dados bem organizados</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HABILIDADES ===== -->
+    <section class="secao verde" id="habilidades" aria-labelledby="titulo-habilidades">
+      <div class="conteudo">
+        <h2 class="titulo-secao" id="titulo-habilidades">HABILIDADES</h2>
+        <p class="assinatura">o que eu faço</p>
+
+        <ul class="grade-cartoes">
+          <li class="cartao">
+            <h3>Back-end</h3>
+            <p>Lógica de programação, regras de negócio e organização do código que roda no servidor.</p>
+          </li>
+          <li class="cartao">
+            <h3>Front-end</h3>
+            <p>Páginas acessíveis e responsivas, feitas com HTML, CSS e JavaScript.</p>
+          </li>
+          <li class="cartao">
+            <h3>Banco de dados</h3>
+            <p>Criação de tabelas e consultas para guardar e buscar informações com segurança.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section class="secao" id="projetos" aria-labelledby="titulo-projetos">
+      <div class="conteudo">
+        <h2 class="titulo-secao" id="titulo-projetos">PROJETOS</h2>
+        <p class="assinatura">feitos durante o curso</p>
+
+        <ul class="grade-cartoes">
+          <li class="cartao borda">
+            <h3>Carrinho de compras</h3>
+            <p>Simulação de um carrinho: adiciona e remove produtos, ajusta quantidades e calcula o total da compra.</p>
+            <a class="link" href="https://github.com/lyd1amc/UC31---Carrinho" target="_blank" rel="noopener noreferrer"
+               aria-label="Ver o projeto Carrinho de compras no GitHub (abre em nova aba)">Ver no GitHub</a>
+          </li>
+          <li class="cartao borda">
+            <h3>Gerenciador de senhas</h3>
+            <p>Aplicação para criar e organizar senhas, pensada com cuidados básicos de segurança.</p>
+            <a class="link" href="https://github.com/lyd1amc/UC31---Senhas" target="_blank" rel="noopener noreferrer"
+               aria-label="Ver o projeto Gerenciador de senhas no GitHub (abre em nova aba)">Ver no GitHub</a>
+          </li>
+          <!-- TROCAR: coloque aqui o nome, a descrição e o link do seu terceiro projeto -->
+          <li class="cartao borda">
+            <h3>Novo projeto</h3>
+            <p>Mais um projeto do curso está a caminho. Acompanhe as novidades no meu GitHub.</p>
+            <a class="link" href="https://github.com/lyd1amc" target="_blank" rel="noopener noreferrer"
+               aria-label="Ver o perfil de Lydia no GitHub (abre em nova aba)">Ver no GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO (só e-mail e GitHub, sem formulário) ===== -->
+    <section class="secao verde" id="contato" aria-labelledby="titulo-contato">
+      <div class="conteudo contato-grade">
+        <h2 class="titulo-grande pequeno" id="titulo-contato">
+          <span class="so-leitor">Contato</span>
+          <span aria-hidden="true">CONTATO</span>
+          <span class="vazado" aria-hidden="true">CONTATO</span>
+          <span class="vazado" aria-hidden="true">CONTATO</span>
+        </h2>
+
+        <div class="caixa-grande">
+          <p class="assinatura escuro-texto">vamos conversar?</p>
+          <ul class="lista-contato">
+            <li>E-mail: <a href="mailto:lydiafernandinha@gmail.com">lydiafernandinha@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/lyd1amc" target="_blank" rel="noopener noreferrer">github.com/lyd1amc</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <p>© <span id="ano">2026</span> Lydia Fernanda</p>
+    <a href="#inicio" aria-label="Voltar ao topo da página">Voltar ao topo ↑</a>
+  </footer>
+</body>
+</html>
